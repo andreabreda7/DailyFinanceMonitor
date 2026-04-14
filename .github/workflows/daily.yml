@@ -1,0 +1,42 @@
+name: Daily Market Monitor
+
+on:
+  schedule:
+    # Runs at 18:30 UTC = 19:30 CET / 20:30 CEST (dopo chiusura mercati europei)
+    - cron: "30 17 * * 1-5"   # lunedì–venerdì
+  workflow_dispatch:            # permette esecuzione manuale dal pannello GitHub
+
+permissions:
+  contents: write   # necessario per fare push della dashboard su docs/
+
+jobs:
+  run-monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run market monitor
+        env:
+          TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python monitor.py
+
+      - name: Commit and push updated dashboard data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git diff --cached --quiet || git commit -m "chore: update market data $(date -u +%Y-%m-%d)"
+          git push
