@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-14T22:20:52.327092Z",
+  "updated_at": "2026-04-14T22:24:49.757119Z",
   "results": [
     {
       "ticker": "VWCE.DE",
@@ -67,13 +67,18 @@
       "change_1d": 1.82,
       "change_5d": 6.8,
       "high_52w": 634.1523,
-      "low_52w": 431.0236,
+      "low_52w": 431.0237,
       "ytd": 2.65,
       "currency": "USD"
     }
   ],
   "history": {
     "VWCE.DE": [
+      {
+        "date": "2026-04-14",
+        "price": NaN,
+        "drawdown": NaN
+      },
       {
         "date": "2026-04-14",
         "price": NaN,
@@ -95,9 +100,19 @@
         "date": "2026-04-14",
         "price": 694.46,
         "drawdown": 0.0
+      },
+      {
+        "date": "2026-04-14",
+        "price": 694.46,
+        "drawdown": 0.0
       }
     ],
     "CSPX.L": [
+      {
+        "date": "2026-04-14",
+        "price": 746.64,
+        "drawdown": -0.3
+      },
       {
         "date": "2026-04-14",
         "price": 746.64,
@@ -119,9 +134,19 @@
         "date": "2026-04-14",
         "price": NaN,
         "drawdown": NaN
+      },
+      {
+        "date": "2026-04-14",
+        "price": NaN,
+        "drawdown": NaN
       }
     ],
     "QQQ": [
+      {
+        "date": "2026-04-14",
+        "price": 628.6,
+        "drawdown": -0.88
+      },
       {
         "date": "2026-04-14",
         "price": 628.6,
