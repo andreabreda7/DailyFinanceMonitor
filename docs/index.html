@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Monitor – Drawdown Tracker</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:       #f7f6f3;
+    --surface:  #ffffff;
+    --border:   rgba(0,0,0,0.08);
+    --text:     #1a1a18;
+    --muted:    #6b6b67;
+    --green:    #0F6E56;
+    --red:      #A32D2D;
+    --amber:    #854F0B;
+    --blue:     #185FA5;
+    --radius:   12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:      #1a1a18;
+      --surface: #242422;
+      --border:  rgba(255,255,255,0.09);
+      --text:    #f0ede6;
+      --muted:   #9a9a94;
+    }
+  }
+  body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  header { max-width: 960px; margin: 0 auto; padding: 2rem 1.25rem 0; }
+  header h1 { font-size: 1.5rem; font-weight: 600; }
+  header p  { color: var(--muted); font-size: 0.875rem; margin-top: 4px; }
+  #updated  { color: var(--muted); font-size: 0.8rem; margin-top: 6px; }
+  main { max-width: 960px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin-bottom: 2rem; }
+  .card {
+    background: var(--surface); border: 0.5px solid var(--border);
+    border-radius: var(--radius); padding: 1.1rem 1.25rem;
+  }
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .card-name  { font-size: 0.9rem; font-weight: 600; }
+  .card-ticker{ font-size: 0.75rem; color: var(--muted); }
+  .badge { font-size: 0.7rem; font-weight: 600; padding: 3px 8px; border-radius: 20px; }
+  .badge-ok     { background: #EAF3DE; color: #3B6D11; }
+  .badge-warn   { background: #FAEEDA; color: #854F0B; }
+  .badge-danger { background: #FCEBEB; color: #A32D2D; }
+  @media (prefers-color-scheme: dark) {
+    .badge-ok     { background: #173404; color: #C0DD97; }
+    .badge-warn   { background: #412402; color: #FAC775; }
+    .badge-danger { background: #501313; color: #F7C1C1; }
+  }
+  .price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+  .price { font-size: 1.6rem; font-weight: 600; }
+  .change { font-size: 0.85rem; font-weight: 500; }
+  .change.pos { color: var(--green); }
+  .change.neg { color: var(--red); }
+  .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .metric label { display: block; font-size: 0.7rem; color: var(--muted); margin-bottom: 2px; }
+  .metric span  { font-size: 0.85rem; font-weight: 500; }
+  .drawdown-bar-wrap { margin-top: 12px; }
+  .drawdown-bar-wrap label { font-size: 0.7rem; color: var(--muted); margin-bottom: 4px; display: block; }
+  .bar-track { background: var(--border); border-radius: 4px; height: 6px; overflow: hidden; }
+  .bar-fill  { height: 100%; border-radius: 4px; transition: width .4s; }
+  section { margin-bottom: 2rem; }
+  section h2 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+  .chart-wrap { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+  .chart-inner { position: relative; width: 100%; }
+  .ticker-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1rem; }
+  .tab-btn {
+    font-size: 0.8rem; padding: 5px 12px; border-radius: 20px;
+    border: 0.5px solid var(--border); background: transparent;
+    color: var(--muted); cursor: pointer;
+  }
+  .tab-btn.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+  .threshold-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+  .threshold-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 0.5px solid var(--border); }
+  .threshold-row:last-child { border-bottom: none; }
+  .threshold-label { font-size: 0.9rem; }
+  .threshold-status { font-size: 0.8rem; font-weight: 500; }
+  footer { text-align: center; padding: 2rem; font-size: 0.75rem; color: var(--muted); }
+  #error-msg { color: var(--red); padding: 2rem; text-align: center; }
+</style>
+</head>
+<body>
+<header>
+  <h1>📊 Market Monitor</h1>
+  <p>Drawdown da ATH – aggiornamento automatico alla chiusura dei mercati</p>
+  <p id="updated">Caricamento in corso...</p>
+</header>
+
+<main>
+  <div id="cards-grid" class="grid"></div>
+
+  <section>
+    <h2>Storico drawdown</h2>
+    <div class="chart-wrap">
+      <div class="ticker-tabs" id="ticker-tabs"></div>
+      <div class="chart-inner" style="height: 260px;">
+        <canvas id="drawdown-chart" role="img" aria-label="Grafico storico del drawdown per ETF selezionato"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Soglie di acquisto PAC</h2>
+    <div class="threshold-section" id="thresholds-table"></div>
+  </section>
+</main>
+
+<footer>Dati via Yahoo Finance · Aggiornato automaticamente da GitHub Actions · Solo a scopo informativo, non consulenza finanziaria.</footer>
+
+<script>
+let chartInstance = null;
+let globalData = null;
+
+function sign(n) { return n >= 0 ? '+' : ''; }
+function fmt(n, dec=2) { return n.toFixed(dec); }
+
+function badgeClass(dd) {
+  if (dd <= -20) return 'badge-danger';
+  if (dd <= -10) return 'badge-warn';
+  return 'badge-ok';
+}
+function badgeLabel(dd) {
+  if (dd <= -20) return '🔴 Forte correzione';
+  if (dd <= -10) return '🟡 Correzione';
+  return '🟢 Prossimo ai massimi';
+}
+function barColor(dd) {
+  if (dd <= -20) return '#A32D2D';
+  if (dd <= -10) return '#854F0B';
+  return '#0F6E56';
+}
+
+function renderCards(results) {
+  const grid = document.getElementById('cards-grid');
+  grid.innerHTML = results.map(r => {
+    const ddAbs = Math.abs(r.drawdown_pct);
+    const barW  = Math.min(ddAbs, 50) * 2; // max bar at -50%
+    const chClass = r.change_1d >= 0 ? 'pos' : 'neg';
+    return `
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-name">${r.name.split('–')[1]?.trim() || r.name}</div>
+          <div class="card-ticker">${r.ticker}</div>
+        </div>
+        <span class="badge ${badgeClass(r.drawdown_pct)}">${badgeLabel(r.drawdown_pct)}</span>
+      </div>
+      <div class="price-row">
+        <span class="price">${fmt(r.price, r.price > 100 ? 2 : 4)}</span>
+        <span style="font-size:0.75rem;color:var(--muted)">${r.currency}</span>
+        <span class="change ${chClass}">${sign(r.change_1d)}${fmt(r.change_1d)}% oggi</span>
+      </div>
+      <div class="metrics">
+        <div class="metric"><label>ATH</label><span>${fmt(r.ath, 2)} (${r.ath_date})</span></div>
+        <div class="metric"><label>Drawdown ATH</label><span style="color:${barColor(r.drawdown_pct)};font-weight:600">${fmt(r.drawdown_pct)}%</span></div>
+        <div class="metric"><label>Max 52 sett.</label><span>${fmt(r.high_52w, 2)}</span></div>
+        <div class="metric"><label>Min 52 sett.</label><span>${fmt(r.low_52w, 2)}</span></div>
+        <div class="metric"><label>5 giorni</label><span class="${r.change_5d>=0?'change pos':'change neg'}">${sign(r.change_5d)}${fmt(r.change_5d)}%</span></div>
+        <div class="metric"><label>YTD</label><span class="${r.ytd>=0?'change pos':'change neg'}">${sign(r.ytd)}${fmt(r.ytd)}%</span></div>
+      </div>
+      <div class="drawdown-bar-wrap">
+        <label>Distanza da ATH (${fmt(r.drawdown_pct)}%)</label>
+        <div class="bar-track"><div class="bar-fill" style="width:${barW}%;background:${barColor(r.drawdown_pct)}"></div></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderChart(ticker, history) {
+  const entries = (history[ticker] || []).slice(-180);
+  const labels  = entries.map(e => e.date);
+  const data    = entries.map(e => e.drawdown);
+  const ctx     = document.getElementById('drawdown-chart').getContext('2d');
+  if (chartInstance) chartInstance.destroy();
+  chartInstance = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Drawdown %',
+        data,
+        borderColor: '#185FA5',
+        backgroundColor: 'rgba(24,95,165,0.07)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 0,
+        borderWidth: 2,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => c.parsed.y.toFixed(2) + '%' } } },
+      scales: {
+        x: { ticks: { maxTicksLimit: 8, color: '#888780', font: { size: 11 } }, grid: { color: 'rgba(136,135,128,0.1)' } },
+        y: {
+          ticks: { color: '#888780', font: { size: 11 }, callback: v => v + '%' },
+          grid: { color: 'rgba(136,135,128,0.1)' },
+          max: 2,
+        }
+      }
+    }
+  });
+}
+
+function renderTabs(results, history) {
+  const wrap = document.getElementById('ticker-tabs');
+  wrap.innerHTML = results.map((r, i) =>
+    `<button class="tab-btn ${i===0?'active':''}" data-ticker="${r.ticker}">${r.ticker}</button>`
+  ).join('');
+  wrap.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      wrap.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderChart(btn.dataset.ticker, history);
+    });
+  });
+  if (results.length) renderChart(results[0].ticker, history);
+}
+
+function renderThresholds(results, thresholds) {
+  const table = document.getElementById('thresholds-table');
+  const rows  = results.flatMap(r =>
+    thresholds.map(t => {
+      const hit = r.drawdown_pct <= t;
+      return `<div class="threshold-row">
+        <span class="threshold-label"><b>${r.ticker}</b> scende oltre <b>${t}%</b> da ATH</span>
+        <span class="threshold-status" style="color:${hit ? '#A32D2D' : '#0F6E56'}">${hit ? '🔴 Attiva – considera ingresso PAC' : '🟢 Non ancora raggiunta'}</span>
+      </div>`;
+    })
+  );
+  table.innerHTML = rows.join('');
+}
+
+async function loadData() {
+  try {
+    const resp = await fetch('data.json?t=' + Date.now());
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    globalData = data;
+
+    const d = new Date(data.updated_at);
+    document.getElementById('updated').textContent =
+      'Ultimo aggiornamento: ' + d.toLocaleString('it-IT', { dateStyle: 'long', timeStyle: 'short', timeZone: 'Europe/Rome' });
+
+    renderCards(data.results);
+    renderTabs(data.results, data.history);
+    renderThresholds(data.results, data.thresholds || [-10, -20, -30]);
+  } catch (e) {
+    document.getElementById('cards-grid').innerHTML =
+      `<p id="error-msg">⚠️ Impossibile caricare data.json. Esegui prima <code>python monitor.py</code> per generare i dati.<br><small>${e}</small></p>`;
+  }
+}
+
+loadData();
+</script>
+</body>
+</html>
