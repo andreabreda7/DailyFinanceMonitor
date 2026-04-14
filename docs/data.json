@@ -1,6 +1,117 @@
 {
-  "updated_at": null,
-  "results": [],
-  "history": {},
-  "thresholds": [-10, -20, -30]
+  "updated_at": "2026-04-14T22:16:59.885591Z",
+  "results": [
+    {
+      "ticker": "VWCE.DE",
+      "name": "VWCE \u2013 Vanguard All-World",
+      "price": NaN,
+      "ath": 150.86,
+      "ath_date": "2026-02-25",
+      "drawdown_pct": NaN,
+      "change_1d": NaN,
+      "change_5d": NaN,
+      "high_52w": 150.86,
+      "low_52w": 113.92,
+      "ytd": NaN,
+      "currency": "EUR"
+    },
+    {
+      "ticker": "SPY",
+      "name": "SPY \u2013 S&P 500",
+      "price": 694.46,
+      "ath": 694.46,
+      "ath_date": "2026-04-14",
+      "drawdown_pct": 0.0,
+      "change_1d": 1.22,
+      "change_5d": 5.35,
+      "high_52w": 694.46,
+      "low_52w": 508.0559,
+      "ytd": 1.93,
+      "currency": "USD"
+    },
+    {
+      "ticker": "CSPX.L",
+      "name": "CSPX \u2013 S&P 500 (LSE)",
+      "price": 746.64,
+      "ath": 748.88,
+      "ath_date": "2026-01-27",
+      "drawdown_pct": -0.3,
+      "change_1d": 1.91,
+      "change_5d": 6.0,
+      "high_52w": 748.88,
+      "low_52w": 558.66,
+      "ytd": 1.79,
+      "currency": "USD"
+    },
+    {
+      "ticker": "IWDA.AS",
+      "name": "IWDA \u2013 MSCI World",
+      "price": NaN,
+      "ath": 114.93,
+      "ath_date": "2026-01-15",
+      "drawdown_pct": NaN,
+      "change_1d": NaN,
+      "change_5d": NaN,
+      "high_52w": 114.93,
+      "low_52w": 88.53,
+      "ytd": NaN,
+      "currency": "EUR"
+    },
+    {
+      "ticker": "QQQ",
+      "name": "QQQ \u2013 Nasdaq 100",
+      "price": 628.6,
+      "ath": 634.1523,
+      "ath_date": "2025-10-29",
+      "drawdown_pct": -0.88,
+      "change_1d": 1.82,
+      "change_5d": 6.8,
+      "high_52w": 634.1523,
+      "low_52w": 431.0237,
+      "ytd": 2.65,
+      "currency": "USD"
+    }
+  ],
+  "history": {
+    "VWCE.DE": [
+      {
+        "date": "2026-04-14",
+        "price": NaN,
+        "drawdown": NaN
+      }
+    ],
+    "SPY": [
+      {
+        "date": "2026-04-14",
+        "price": 694.46,
+        "drawdown": 0.0
+      }
+    ],
+    "CSPX.L": [
+      {
+        "date": "2026-04-14",
+        "price": 746.64,
+        "drawdown": -0.3
+      }
+    ],
+    "IWDA.AS": [
+      {
+        "date": "2026-04-14",
+        "price": NaN,
+        "drawdown": NaN
+      }
+    ],
+    "QQQ": [
+      {
+        "date": "2026-04-14",
+        "price": 628.6,
+        "drawdown": -0.88
+      }
+    ]
+  },
+  "thresholds": [
+    -10,
+    -20,
+    -30
+  ]
 }
