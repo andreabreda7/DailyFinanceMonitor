@@ -1,74 +1,74 @@
 {
-  "updated_at": "2026-04-22T18:37:14.028488Z",
+  "updated_at": "2026-04-23T18:41:41.911071Z",
   "results": [
     {
       "ticker": "VWCE.DE",
       "name": "VWCE \u2013 Vanguard All-World",
-      "price": 153.38,
-      "ath": 153.66,
-      "ath_date": "2026-04-17",
-      "drawdown_pct": -0.18,
-      "change_1d": 0.54,
-      "change_5d": 1.72,
-      "high_52w": 153.66,
-      "low_52w": 115.08,
-      "ytd": 5.68,
+      "price": 153.78,
+      "ath": 153.78,
+      "ath_date": "2026-04-23",
+      "drawdown_pct": 0.0,
+      "change_1d": 0.26,
+      "change_5d": 1.37,
+      "high_52w": 153.78,
+      "low_52w": 118.42,
+      "ytd": 5.95,
       "currency": "EUR"
     },
     {
       "ticker": "SPY",
       "name": "SPY \u2013 S&P 500",
-      "price": 709.7706,
-      "ath": 710.14,
-      "ath_date": "2026-04-17",
-      "drawdown_pct": -0.05,
-      "change_1d": 0.81,
-      "change_5d": 1.4,
-      "high_52w": 710.14,
-      "low_52w": 521.2744,
-      "ytd": 4.18,
+      "price": 708.76,
+      "ath": 711.21,
+      "ath_date": "2026-04-22",
+      "drawdown_pct": -0.34,
+      "change_1d": -0.34,
+      "change_5d": 1.01,
+      "high_52w": 711.21,
+      "low_52w": 529.3517,
+      "ytd": 4.03,
       "currency": "USD"
     },
     {
       "ticker": "CSPX.L",
       "name": "CSPX \u2013 S&P 500 (LSE)",
-      "price": 765.49,
-      "ath": 766.84,
-      "ath_date": "2026-04-17",
-      "drawdown_pct": -0.18,
-      "change_1d": 0.46,
-      "change_5d": 1.87,
-      "high_52w": 766.84,
-      "low_52w": 560.51,
-      "ytd": 4.36,
+      "price": 767.94,
+      "ath": 767.94,
+      "ath_date": "2026-04-23",
+      "drawdown_pct": 0.0,
+      "change_1d": 0.32,
+      "change_5d": 1.56,
+      "high_52w": 767.94,
+      "low_52w": 574.95,
+      "ytd": 4.69,
       "currency": "USD"
     },
     {
       "ticker": "IWDA.AS",
       "name": "IWDA \u2013 MSCI World",
-      "price": 116.595,
-      "ath": 116.675,
-      "ath_date": "2026-04-17",
-      "drawdown_pct": -0.07,
-      "change_1d": 0.43,
-      "change_5d": 1.71,
-      "high_52w": 116.675,
-      "low_52w": 92.41,
-      "ytd": 4.72,
+      "price": 116.985,
+      "ath": 116.985,
+      "ath_date": "2026-04-23",
+      "drawdown_pct": 0.0,
+      "change_1d": 0.33,
+      "change_5d": 1.45,
+      "high_52w": 116.985,
+      "low_52w": 92.555,
+      "ytd": 5.07,
       "currency": "EUR"
     },
     {
       "ticker": "QQQ",
       "name": "QQQ \u2013 Nasdaq 100",
-      "price": 653.32,
-      "ath": 653.32,
+      "price": 651.9999,
+      "ath": 655.11,
       "ath_date": "2026-04-22",
-      "drawdown_pct": 0.0,
-      "change_1d": 1.4,
-      "change_5d": 2.5,
-      "high_52w": 653.32,
-      "low_52w": 442.3389,
-      "ytd": 6.69,
+      "drawdown_pct": -0.47,
+      "change_1d": -0.47,
+      "change_5d": 1.8,
+      "high_52w": 655.11,
+      "low_52w": 452.3703,
+      "ytd": 6.48,
       "currency": "USD"
     }
   ],
@@ -123,6 +123,11 @@
         "date": "2026-04-22",
         "price": 153.38,
         "drawdown": -0.18
+      },
+      {
+        "date": "2026-04-23",
+        "price": 153.78,
+        "drawdown": 0.0
       }
     ],
     "SPY": [
@@ -175,6 +180,11 @@
         "date": "2026-04-22",
         "price": 709.7706,
         "drawdown": -0.05
+      },
+      {
+        "date": "2026-04-23",
+        "price": 708.76,
+        "drawdown": -0.34
       }
     ],
     "CSPX.L": [
@@ -227,6 +237,11 @@
         "date": "2026-04-22",
         "price": 765.49,
         "drawdown": -0.18
+      },
+      {
+        "date": "2026-04-23",
+        "price": 767.94,
+        "drawdown": 0.0
       }
     ],
     "IWDA.AS": [
@@ -279,6 +294,11 @@
         "date": "2026-04-22",
         "price": 116.595,
         "drawdown": -0.07
+      },
+      {
+        "date": "2026-04-23",
+        "price": 116.985,
+        "drawdown": 0.0
       }
     ],
     "QQQ": [
@@ -331,6 +351,11 @@
         "date": "2026-04-22",
         "price": 653.32,
         "drawdown": 0.0
+      },
+      {
+        "date": "2026-04-23",
+        "price": 651.9999,
+        "drawdown": -0.47
       }
     ]
   },
