@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-30T18:51:32.065780Z",
+  "updated_at": "2026-05-01T18:37:32.729023Z",
   "results": [
     {
       "ticker": "VWCE.DE",
@@ -18,29 +18,29 @@
     {
       "ticker": "SPY",
       "name": "SPY \u2013 S&P 500",
-      "price": 718.54,
-      "ath": 718.54,
-      "ath_date": "2026-04-30",
+      "price": 721.38,
+      "ath": 721.38,
+      "ath_date": "2026-05-01",
       "drawdown_pct": 0.0,
-      "change_1d": 0.98,
-      "change_5d": 1.42,
-      "high_52w": 718.54,
-      "low_52w": 548.255,
-      "ytd": 5.46,
+      "change_1d": 0.38,
+      "change_5d": 1.04,
+      "high_52w": 721.38,
+      "low_52w": 552.1405,
+      "ytd": 5.88,
       "currency": "USD"
     },
     {
       "ticker": "CSPX.L",
       "name": "CSPX \u2013 S&P 500 (LSE)",
-      "price": 770.35,
-      "ath": 770.35,
-      "ath_date": "2026-04-30",
+      "price": 779.81,
+      "ath": 779.81,
+      "ath_date": "2026-05-01",
       "drawdown_pct": 0.0,
-      "change_1d": 0.51,
-      "change_5d": 0.31,
-      "high_52w": 770.35,
-      "low_52w": 586.32,
-      "ytd": 5.02,
+      "change_1d": 1.23,
+      "change_5d": 1.61,
+      "high_52w": 779.81,
+      "low_52w": 596.63,
+      "ytd": 6.31,
       "currency": "USD"
     },
     {
@@ -60,15 +60,15 @@
     {
       "ticker": "QQQ",
       "name": "QQQ \u2013 Nasdaq 100",
-      "price": 667.31,
-      "ath": 667.31,
-      "ath_date": "2026-04-30",
+      "price": 674.04,
+      "ath": 674.04,
+      "ath_date": "2026-05-01",
       "drawdown_pct": 0.0,
-      "change_1d": 0.87,
-      "change_5d": 2.44,
-      "high_52w": 667.31,
-      "low_52w": 473.1796,
-      "ytd": 8.98,
+      "change_1d": 0.94,
+      "change_5d": 1.53,
+      "high_52w": 674.04,
+      "low_52w": 479.091,
+      "ytd": 10.07,
       "currency": "USD"
     }
   ],
@@ -153,6 +153,11 @@
         "date": "2026-04-30",
         "price": 153.96,
         "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-01",
+        "price": 153.96,
+        "drawdown": 0.0
       }
     ],
     "SPY": [
@@ -234,6 +239,11 @@
       {
         "date": "2026-04-30",
         "price": 718.54,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-01",
+        "price": 721.38,
         "drawdown": 0.0
       }
     ],
@@ -317,6 +327,11 @@
         "date": "2026-04-30",
         "price": 770.35,
         "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-01",
+        "price": 779.81,
+        "drawdown": 0.0
       }
     ],
     "IWDA.AS": [
@@ -397,6 +412,11 @@
       },
       {
         "date": "2026-04-30",
+        "price": 117.055,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-01",
         "price": 117.055,
         "drawdown": 0.0
       }
@@ -480,6 +500,11 @@
       {
         "date": "2026-04-30",
         "price": 667.31,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-01",
+        "price": 674.04,
         "drawdown": 0.0
       }
     ]
