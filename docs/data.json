@@ -1,74 +1,74 @@
 {
-  "updated_at": "2026-07-03T18:45:11.561203Z",
+  "updated_at": "2026-07-06T19:13:21.530351Z",
   "results": [
     {
       "ticker": "VWCE.DE",
       "name": "VWCE \u2013 Vanguard All-World",
-      "price": 165.88,
-      "ath": 166.04,
-      "ath_date": "2026-06-22",
-      "drawdown_pct": -0.1,
-      "change_1d": 0.55,
-      "change_5d": 1.33,
-      "high_52w": 166.04,
+      "price": 166.6,
+      "ath": 166.6,
+      "ath_date": "2026-07-06",
+      "drawdown_pct": 0.0,
+      "change_1d": 0.43,
+      "change_5d": 1.93,
+      "high_52w": 166.6,
       "low_52w": 130.28,
-      "ytd": 14.29,
+      "ytd": 14.79,
       "currency": "EUR"
     },
     {
       "ticker": "SPY",
       "name": "SPY \u2013 S&P 500",
-      "price": 744.78,
+      "price": 751.79,
       "ath": 757.6182,
       "ath_date": "2026-06-02",
-      "drawdown_pct": -1.69,
-      "change_1d": -0.13,
-      "change_5d": 1.43,
+      "drawdown_pct": -0.77,
+      "change_1d": 0.94,
+      "change_5d": 3.13,
       "high_52w": 757.6182,
       "low_52w": 613.5418,
-      "ytd": 9.6,
+      "ytd": 10.63,
       "currency": "USD"
     },
     {
       "ticker": "CSPX.L",
       "name": "CSPX \u2013 S&P 500 (LSE)",
-      "price": 807.86,
+      "price": 811.15,
       "ath": 819.1,
       "ath_date": "2026-06-02",
-      "drawdown_pct": -1.37,
-      "change_1d": 0.22,
-      "change_5d": 1.73,
+      "drawdown_pct": -0.97,
+      "change_1d": 0.41,
+      "change_5d": 1.8,
       "high_52w": 819.1,
       "low_52w": 662.59,
-      "ytd": 10.13,
+      "ytd": 10.58,
       "currency": "USD"
     },
     {
       "ticker": "IWDA.AS",
       "name": "IWDA \u2013 MSCI World",
-      "price": 125.74,
-      "ath": 125.86,
-      "ath_date": "2026-07-01",
-      "drawdown_pct": -0.1,
-      "change_1d": 0.41,
-      "change_5d": 1.62,
-      "high_52w": 125.86,
+      "price": 126.35,
+      "ath": 126.35,
+      "ath_date": "2026-07-06",
+      "drawdown_pct": 0.0,
+      "change_1d": 0.49,
+      "change_5d": 2.0,
+      "high_52w": 126.35,
       "low_52w": 100.61,
-      "ytd": 12.94,
+      "ytd": 13.49,
       "currency": "EUR"
     },
     {
       "ticker": "QQQ",
       "name": "QQQ \u2013 Nasdaq 100",
-      "price": 712.6,
+      "price": 724.3,
       "ath": 745.3409,
       "ath_date": "2026-06-02",
-      "drawdown_pct": -4.39,
-      "change_1d": -1.73,
-      "change_5d": -0.53,
+      "drawdown_pct": -2.82,
+      "change_1d": 1.64,
+      "change_5d": 2.52,
       "high_52w": 745.3409,
-      "low_52w": 548.16,
-      "ytd": 16.5,
+      "low_52w": 549.3841,
+      "ytd": 18.41,
       "currency": "USD"
     }
   ],
@@ -383,6 +383,11 @@
         "date": "2026-07-03",
         "price": 165.88,
         "drawdown": -0.1
+      },
+      {
+        "date": "2026-07-06",
+        "price": 166.6,
+        "drawdown": 0.0
       }
     ],
     "SPY": [
@@ -695,6 +700,11 @@
         "date": "2026-07-03",
         "price": 744.78,
         "drawdown": -1.69
+      },
+      {
+        "date": "2026-07-06",
+        "price": 751.79,
+        "drawdown": -0.77
       }
     ],
     "CSPX.L": [
@@ -1002,6 +1012,11 @@
         "date": "2026-07-03",
         "price": 807.86,
         "drawdown": -1.37
+      },
+      {
+        "date": "2026-07-06",
+        "price": 811.15,
+        "drawdown": -0.97
       }
     ],
     "IWDA.AS": [
@@ -1314,6 +1329,11 @@
         "date": "2026-07-03",
         "price": 125.74,
         "drawdown": -0.1
+      },
+      {
+        "date": "2026-07-06",
+        "price": 126.35,
+        "drawdown": 0.0
       }
     ],
     "QQQ": [
@@ -1626,6 +1646,11 @@
         "date": "2026-07-03",
         "price": 712.6,
         "drawdown": -4.39
+      },
+      {
+        "date": "2026-07-06",
+        "price": 724.3,
+        "drawdown": -2.82
       }
     ]
   },
