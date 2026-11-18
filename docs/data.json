@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T23:54:17.693424Z",
+  "updated_at": "2026-11-18T23:28:34.125793Z",
   "results": [
     {
       "ticker": "VWCE.DE",
@@ -18,29 +18,29 @@
     {
       "ticker": "SPY",
       "name": "SPY \u2013 S&P 500",
-      "price": 732.44,
+      "price": 730.2,
       "ath": 779.09,
       "ath_date": "2026-10-06",
-      "drawdown_pct": -5.99,
-      "change_1d": -1.01,
-      "change_5d": -2.33,
+      "drawdown_pct": -6.28,
+      "change_1d": -0.31,
+      "change_5d": -3.9,
       "high_52w": 779.09,
       "low_52w": 628.7847,
-      "ytd": 8.05,
+      "ytd": 7.72,
       "currency": "USD"
     },
     {
       "ticker": "CSPX.L",
       "name": "CSPX \u2013 S&P 500 (LSE)",
-      "price": 790.97,
+      "price": 789.92,
       "ath": 845.93,
       "ath_date": "2026-10-06",
-      "drawdown_pct": -6.5,
-      "change_1d": -2.16,
-      "change_5d": -2.31,
+      "drawdown_pct": -6.62,
+      "change_1d": -0.13,
+      "change_5d": -3.88,
       "high_52w": 845.93,
       "low_52w": 687.67,
-      "ytd": 7.83,
+      "ytd": 7.69,
       "currency": "USD"
     },
     {
@@ -60,15 +60,15 @@
     {
       "ticker": "QQQ",
       "name": "QQQ \u2013 Nasdaq 100",
-      "price": 656.95,
+      "price": 659.51,
       "ath": 759.66,
       "ath_date": "2026-10-06",
-      "drawdown_pct": -13.52,
-      "change_1d": -0.73,
-      "change_5d": -2.64,
+      "drawdown_pct": -13.18,
+      "change_1d": 0.39,
+      "change_5d": -4.47,
       "high_52w": 759.66,
       "low_52w": 557.0867,
-      "ytd": 7.51,
+      "ytd": 7.93,
       "currency": "USD"
     }
   ],
@@ -863,6 +863,11 @@
         "date": "2026-11-17",
         "price": NaN,
         "drawdown": NaN
+      },
+      {
+        "date": "2026-11-18",
+        "price": NaN,
+        "drawdown": NaN
       }
     ],
     "SPY": [
@@ -1655,6 +1660,11 @@
         "date": "2026-11-17",
         "price": 732.44,
         "drawdown": -5.99
+      },
+      {
+        "date": "2026-11-18",
+        "price": 730.2,
+        "drawdown": -6.28
       }
     ],
     "CSPX.L": [
@@ -2442,6 +2452,11 @@
         "date": "2026-11-17",
         "price": 790.97,
         "drawdown": -6.5
+      },
+      {
+        "date": "2026-11-18",
+        "price": 789.92,
+        "drawdown": -6.62
       }
     ],
     "IWDA.AS": [
@@ -3232,6 +3247,11 @@
       },
       {
         "date": "2026-11-17",
+        "price": NaN,
+        "drawdown": NaN
+      },
+      {
+        "date": "2026-11-18",
         "price": NaN,
         "drawdown": NaN
       }
@@ -4026,6 +4046,11 @@
         "date": "2026-11-17",
         "price": 656.95,
         "drawdown": -13.52
+      },
+      {
+        "date": "2026-11-18",
+        "price": 659.51,
+        "drawdown": -13.18
       }
     ]
   },
