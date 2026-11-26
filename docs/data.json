@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T01:29:18.942281Z",
+  "updated_at": "2026-11-26T01:03:39.748892Z",
   "results": [
     {
       "ticker": "VWCE.DE",
@@ -888,6 +888,11 @@
         "date": "2026-11-25",
         "price": NaN,
         "drawdown": NaN
+      },
+      {
+        "date": "2026-11-26",
+        "price": NaN,
+        "drawdown": NaN
       }
     ],
     "SPY": [
@@ -1705,6 +1710,11 @@
         "date": "2026-11-25",
         "price": NaN,
         "drawdown": NaN
+      },
+      {
+        "date": "2026-11-26",
+        "price": NaN,
+        "drawdown": NaN
       }
     ],
     "CSPX.L": [
@@ -2515,6 +2525,11 @@
       },
       {
         "date": "2026-11-25",
+        "price": NaN,
+        "drawdown": NaN
+      },
+      {
+        "date": "2026-11-26",
         "price": NaN,
         "drawdown": NaN
       }
@@ -3334,6 +3349,11 @@
         "date": "2026-11-25",
         "price": NaN,
         "drawdown": NaN
+      },
+      {
+        "date": "2026-11-26",
+        "price": NaN,
+        "drawdown": NaN
       }
     ],
     "QQQ": [
@@ -4149,6 +4169,11 @@
       },
       {
         "date": "2026-11-25",
+        "price": NaN,
+        "drawdown": NaN
+      },
+      {
+        "date": "2026-11-26",
         "price": NaN,
         "drawdown": NaN
       }
