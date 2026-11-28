@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T01:05:13.131327Z",
+  "updated_at": "2026-11-28T00:37:08.854344Z",
   "results": [
     {
       "ticker": "VWCE.DE",
@@ -18,15 +18,15 @@
     {
       "ticker": "SPY",
       "name": "SPY \u2013 S&P 500",
-      "price": 716.7,
+      "price": 728.32,
       "ath": 779.09,
       "ath_date": "2026-10-06",
-      "drawdown_pct": -8.01,
-      "change_1d": -0.29,
-      "change_5d": -1.85,
+      "drawdown_pct": -6.52,
+      "change_1d": 1.62,
+      "change_5d": 1.74,
       "high_52w": 779.09,
       "low_52w": 628.7847,
-      "ytd": 5.73,
+      "ytd": 7.44,
       "currency": "USD"
     },
     {
@@ -60,15 +60,15 @@
     {
       "ticker": "QQQ",
       "name": "QQQ \u2013 Nasdaq 100",
-      "price": 633.93,
+      "price": 650.99,
       "ath": 759.66,
       "ath_date": "2026-10-06",
-      "drawdown_pct": -16.55,
-      "change_1d": -0.65,
-      "change_5d": -3.88,
+      "drawdown_pct": -14.31,
+      "change_1d": 2.69,
+      "change_5d": 0.92,
       "high_52w": 759.66,
       "low_52w": 557.0867,
-      "ytd": 3.75,
+      "ytd": 6.54,
       "currency": "USD"
     }
   ],
@@ -898,6 +898,11 @@
         "date": "2026-11-27",
         "price": NaN,
         "drawdown": NaN
+      },
+      {
+        "date": "2026-11-28",
+        "price": NaN,
+        "drawdown": NaN
       }
     ],
     "SPY": [
@@ -1725,6 +1730,11 @@
         "date": "2026-11-27",
         "price": 716.7,
         "drawdown": -8.01
+      },
+      {
+        "date": "2026-11-28",
+        "price": 728.32,
+        "drawdown": -6.52
       }
     ],
     "CSPX.L": [
@@ -2545,6 +2555,11 @@
       },
       {
         "date": "2026-11-27",
+        "price": NaN,
+        "drawdown": NaN
+      },
+      {
+        "date": "2026-11-28",
         "price": NaN,
         "drawdown": NaN
       }
@@ -3374,6 +3389,11 @@
         "date": "2026-11-27",
         "price": NaN,
         "drawdown": NaN
+      },
+      {
+        "date": "2026-11-28",
+        "price": NaN,
+        "drawdown": NaN
       }
     ],
     "QQQ": [
@@ -4201,6 +4221,11 @@
         "date": "2026-11-27",
         "price": 633.93,
         "drawdown": -16.55
+      },
+      {
+        "date": "2026-11-28",
+        "price": 650.99,
+        "drawdown": -14.31
       }
     ]
   },
